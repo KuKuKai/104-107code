@@ -1,22 +1,22 @@
 
-public class ¥Y {
+public class å‡¸ {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("¡@¡@¡@¡@¥Y¥Y¥Y¥Y¥Y¥Y                  ");
-		System.out.println("¡@¡@¡@¡@¥Y                  ¥Y                  ");
-		System.out.println("¡@¡@¡@¡@¥Y                  ¥Y                  ");
-		System.out.println("¡@¡@¡@¡@¥Y                  ¥Y                  ");
-		System.out.println("¡@¡@¡@¡@¥Y                  ¥Y                  ");
-		System.out.println("¡@¡@¡@¡@¥Y                  ¥Y                  ");
-		System.out.println("¡@¡@¡@¡@¥Y                  ¥Y                  ");
-		System.out.println("¥Y¥Y¥Y¥Y¥Y                  ¥Y¥Y¥Y¥Y¥Y");
-		System.out.println("¥Y                                                      ¥Y");
-		System.out.println("¥Y                                                      ¥Y");
-		System.out.println("¥Y                                                      ¥Y");
-		System.out.println("¥Y                                                      ¥Y");
-		System.out.println("¥Y                                                      ¥Y");
-		System.out.println("¥Y¥Y¥Y¥Y¥Y¥Y¥Y¥Y¥Y¥Y¥Y¥Y¥Y¥Y");
+		System.out.println("ã€€ã€€ã€€ã€€å‡¸å‡¸å‡¸å‡¸å‡¸å‡¸                  ");
+		System.out.println("ã€€ã€€ã€€ã€€å‡¸        å‡¸                  ");
+		System.out.println("ã€€ã€€ã€€ã€€å‡¸        å‡¸                  ");
+		System.out.println("ã€€ã€€ã€€ã€€å‡¸        å‡¸                  ");
+		System.out.println("ã€€ã€€ã€€ã€€å‡¸        å‡¸                  ");
+		System.out.println("ã€€ã€€ã€€ã€€å‡¸        å‡¸                  ");
+		System.out.println("ã€€ã€€ã€€ã€€å‡¸        å‡¸                  ");
+		System.out.println("å‡¸å‡¸å‡¸å‡¸å‡¸        å‡¸å‡¸å‡¸å‡¸å‡¸");
+		System.out.println("å‡¸                        å‡¸");
+		System.out.println("å‡¸                        å‡¸");
+		System.out.println("å‡¸                        å‡¸");
+		System.out.println("å‡¸                        å‡¸");
+		System.out.println("å‡¸                        å‡¸");
+		System.out.println("å‡¸å‡¸å‡¸å‡¸å‡¸å‡¸å‡¸å‡¸å‡¸å‡¸å‡¸å‡¸å‡¸å‡¸");
 	}
 
 }
