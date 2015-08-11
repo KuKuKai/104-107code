@@ -11,11 +11,11 @@ public class 凸 {
 		System.out.println("　　　　凸        凸                  ");
 		System.out.println("　　　　凸        凸                  ");
 		System.out.println("凸凸凸凸凸        凸凸凸凸凸");
-		System.out.println("凸                        凸");
-		System.out.println("凸                        凸");
-		System.out.println("凸                        凸");
-		System.out.println("凸                        凸");
-		System.out.println("凸                        凸");
+		System.out.println("凸                       凸");
+		System.out.println("凸                       凸");
+		System.out.println("凸                       凸");
+		System.out.println("凸                       凸");
+		System.out.println("凸                       凸");
 		System.out.println("凸凸凸凸凸凸凸凸凸凸凸凸凸凸");
 	}
 
