@@ -7,7 +7,7 @@ public class Array3 {
         int[] data = new int[10];
         int i=0,j=0;
         while(i<10){
-            data[i]=rnd.nextInt(100);
+            data[i]=rnd.nextInt(100)+1;
             i++;
         		}
         for(i=0;i<10;i++){
@@ -22,5 +22,5 @@ public class Array3 {
         for(i=0;i<10;i++){
     	System.out.println(data[i]);
 	}
-}
+	}
 }
