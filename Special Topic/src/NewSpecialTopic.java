@@ -21,6 +21,7 @@ public class NewSpecialTopic {
 			B = 0;
 			boolean tt = false;
 			do {
+				tt=false;
 				int num = scn.nextInt();
 				String str = num + "";
 				int len = str.length();
@@ -37,28 +38,31 @@ public class NewSpecialTopic {
 								break;
 							}
 						}
+						if(tt)break;
 					}
-					for (int i = 0; i < 4; i++) {
-						if (user[i] == data[i]) {
-							A++;
-						}
-						for (int j = 0; j < 4; j++) {
-							if (data[i] == user[j]) {
-								B++;
+					if (tt == false) {
+						for (int i = 0; i < 4; i++) {
+							if (user[i] == data[i]) {
+								A++;
+							}
+							for (int j = 0; j < 4; j++) {
+								if (data[i] == user[j]) {
+									B++;
+								}
 							}
 						}
-					}
-					B = B - A;
-					System.out.println(A + "A" + B + "B");
-					if (A == 4) {
-						System.out.println("你贏啦!");
-					} else {
-						System.out.println("尚未答對，請繼續猜!");
+						B = B - A;
+						System.out.println(A + "A" + B + "B");
+						if (A == 4) {
+							System.out.println("你贏啦!");
+						} else {
+							System.out.println("尚未答對，請繼續猜!");
+						}
 					}
 				} else {
 					System.out.println("輸入錯誤，請再試一次!");
 				}
-			}while (tt);
+			} while (tt);
 		}
 	}
 
