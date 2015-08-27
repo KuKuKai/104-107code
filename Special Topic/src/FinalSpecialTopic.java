@@ -70,6 +70,9 @@ public class FinalSpecialTopic extends JFrame {
 				B = 0;
 				boolean tt = false;
 				int num = (c);
+				String str = num + "";
+				int len = str.length();
+				if (len == 4) {
 				user[0] = num / 1000 % 10;
 				user[1] = num / 100 % 10;
 				user[2] = num / 10 % 10;
@@ -96,6 +99,7 @@ public class FinalSpecialTopic extends JFrame {
 							}
 						}
 					}
+				}
 					B = B - A;
 					answer.append(number.getText() + "\t");
 					answer.append(A + "A" + B + "B\t");
@@ -105,6 +109,8 @@ public class FinalSpecialTopic extends JFrame {
 					} else {
 						answer.append("尚未答對，請繼續猜!\n");
 					}
+				}else{
+					answer.append("輸入錯誤，請再試一次!\n");
 				}
 				X = 4;
 				number.setText("");
