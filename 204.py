@@ -9,14 +9,15 @@ a=eval(input())
 b=eval(input())
 c=input()
 if(c=='*'):
-    print(a*b)
+    d=a*b
 elif(c=='/'):
-    print(a/b)
+    d=a/b
 elif(c=='+'):
-    print(a/b)
+    d=a+b
 elif(c=='-'):
-    print(a/b)
+    d=a-b
 elif(c=='//'):
-    print(a//b)
-elif(c=='%'):
-    print(a%b)
+    d=a//b
+else:
+  d=a%b
+print(d)
