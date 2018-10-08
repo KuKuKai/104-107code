@@ -12,5 +12,5 @@ elif 70 <= a <= 79 :
     print("B")
 elif 60 <= a <= 69 :
     print("C")
-elif a == 59 :
+elif a <= 59 :
     print("F")
