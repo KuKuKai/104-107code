@@ -6,7 +6,7 @@ Created on Fri Oct  5 15:52:59 2018
 """
 
 import math
-r=int(input())
+r=eval(input())
 per=r*2*math.pi
 area=r*r*math.pi
 print("Radius = %.2f"%r)
