@@ -39,42 +39,44 @@ def crawl_price(date):
 for row in crawl_price(datetime.datetime(2018, 10, 3)):                         #主程式
     print(row)
 
-#def bulk_insert(fname, bulk_data):      #此行以下為資料庫
-#    conn = sqlite3.connect(fname)       #資料庫
-#    c = conn.cursor()
-#    c.execute('BEGIN TRANSACTION')
-#    for d in bulk_data:
-#        values = ["'" + str(e) + "'" for e in d]
-#        cmd = 'INSERT OR REPLACE INTO daily_price VALUES({})'.format(','.join(values))
-#        c.execute(cmd)
-#    c.execute('COMMIT')
-#    conn.close()
-#
-#def update_db(date_from, date_to):
-#    print('更新資料：{} 到 {}'.format(date_from.strftime('%Y-%m-%d'), date_to.strftime('%Y-%m-%d')))
-#    current = date_from
-#    while current <= date_to:
-#        prices = crawl_price(current)
-#        if prices:
-#            bulk_insert(db_name, prices)
-#            print(current.strftime('%Y-%m-%d'), '... 成功')
-#        else:
-#            print(current.strftime('%Y-%m-%d'), '... 失敗 (可能為假日)')
-#        current += datetime.timedelta(days=1)
-#        time.sleep(3)                  #放慢爬蟲速度
-#
-#def get_date_range_from_db(fname):
-#    conn = sqlite3.connect(fname)      #資料庫
-#    c = conn.cursor()
-#    c.execute('select * from daily_price order by 日期 ASC LIMIT 1;')
-#    date_from = datetime.datetime.strptime(list(c)[0][1], '%Y-%m-%d')
-#    c.execute('select * from daily_price order by 日期 DESC LIMIT 1;')
-#    date_to = datetime.datetime.strptime(list(c)[0][1], '%Y-%m-%d')
-#    conn.close()
-#    return date_from, date_to
-#
-#db_from, db_to = get_date_range_from_db(db_name)
-#print('資料庫日期：{} 到 {}'.format(db_from.strftime('%Y-%m-%d'), db_to.strftime('%Y-%m-%d')))
-#date_from = db_to + datetime.timedelta(days=1)
-#date_to = datetime.datetime.today()
-#update_db(date_from, date_to)
+def bulk_insert(fname, bulk_data):      #此行以下為資料庫
+    conn = pymysql.connect("localhost","testuser","test123","TESTDB" )       #連接資料庫
+    c = conn.cursor()                   #使用cursor()方法创建一个游标对象cursor
+    c.execute('BEGIN TRANSACTION')      #使用execute()方法执行SQL查询
+    data = c.fetchone()                 #使用fetchone()方法获取单条数据
+    print ("Database version : %s " % data)
+    for d in bulk_data:
+        values = ["'" + str(e) + "'" for e in d]
+        cmd = 'INSERT OR REPLACE INTO daily_price VALUES({})'.format(','.join(values))
+        c.execute(cmd)
+    c.execute('COMMIT')
+    conn.close()                        #斷開資料庫連接
+
+def update_db(date_from, date_to):
+    print('更新資料：{} 到 {}'.format(date_from.strftime('%Y-%m-%d'), date_to.strftime('%Y-%m-%d')))
+    current = date_from
+    while current <= date_to:
+        prices = crawl_price(current)
+        if prices:
+            bulk_insert(db_name, prices)
+            print(current.strftime('%Y-%m-%d'), '... 成功')
+        else:
+            print(current.strftime('%Y-%m-%d'), '... 失敗 (可能為假日)')
+        current += datetime.timedelta(days=1)
+        time.sleep(3)                  #放慢爬蟲速度
+
+def get_date_range_from_db(fname):
+    conn = pymysql.connect("localhost","testuser","test123","TESTDB" )      #連接資料庫
+    c = conn.cursor()
+    c.execute('select * from daily_price order by 日期 ASC LIMIT 1;')
+    date_from = datetime.datetime.strptime(list(c)[0][1], '%Y-%m-%d')
+    c.execute('select * from daily_price order by 日期 DESC LIMIT 1;')
+    date_to = datetime.datetime.strptime(list(c)[0][1], '%Y-%m-%d')
+    conn.close()
+    return date_from, date_to
+
+db_from, db_to = get_date_range_from_db(db_name)
+print('資料庫日期：{} 到 {}'.format(db_from.strftime('%Y-%m-%d'), db_to.strftime('%Y-%m-%d')))
+date_from = db_to + datetime.timedelta(days=1)
+date_to = datetime.datetime.today()
+update_db(date_from, date_to)
