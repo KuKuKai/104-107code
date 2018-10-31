@@ -1,6 +1,6 @@
 <?php
-$serverName = "JINJHENG-PC"; //serverName\instanceName
-$connectionInfo = array( "Database"=>"weather", "UID"=>"sa", "PWD"=>"bang48763", "CharacterSet" => "UTF-8");
+$serverName = "輸入伺服器名稱"; //serverName\instanceName
+$connectionInfo = array( "Database"=>"weather", "UID"=>"sa", "PWD"=>"密碼", "CharacterSet" => "UTF-8");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 $result = sqlsrv_query($conn, "SELECT * FROM 工作表3$");   //select 工作表3$資料表
 if( $conn ) {
